@@ -11,7 +11,7 @@ import java.time.temporal.ChronoUnit;
 
 @Service
 @Profile("smart")
-public class SmartEmployeeService implements EmployeeService {
+public class SmartEmployeeService extends AbstractEmployeeService {
 
     @Autowired
     HrConfigProperties config;

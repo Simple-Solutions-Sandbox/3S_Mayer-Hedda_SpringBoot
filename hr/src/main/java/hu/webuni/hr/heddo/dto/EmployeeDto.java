@@ -1,12 +1,20 @@
 package hu.webuni.hr.heddo.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Positive;
+
 import java.time.LocalDateTime;
 
 public class EmployeeDto {
     private Long id;
+    @NotBlank(message = "Name must not be blank")
     private String name;
+    @NotBlank(message = "Position must not be blank")
     private String position;
+    @Positive(message = "Salary must be positive")
     private Integer salary;
+    @Past(message = "Start date must be in the past")
     private LocalDateTime startDate;
 
 
