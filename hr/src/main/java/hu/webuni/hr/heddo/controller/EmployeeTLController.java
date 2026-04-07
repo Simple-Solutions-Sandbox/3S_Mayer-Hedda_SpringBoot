@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class HrTLController {
+public class EmployeeTLController {
 
     private List<EmployeeDto> allEmployees = new ArrayList<>();
     {
