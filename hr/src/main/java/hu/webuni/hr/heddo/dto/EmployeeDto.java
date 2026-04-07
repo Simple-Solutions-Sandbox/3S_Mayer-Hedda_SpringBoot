@@ -1,8 +1,8 @@
-package hu.webuni.hr.heddo.model;
+package hu.webuni.hr.heddo.dto;
 
 import java.time.LocalDateTime;
 
-public class Employee {
+public class EmployeeDto {
     private Long id;
     private String name;
     private String position;
@@ -10,10 +10,10 @@ public class Employee {
     private LocalDateTime startDate;
 
 
-    public Employee() {
+    public EmployeeDto() {
     }
 
-    public Employee(Long id, String name, String position, Integer salary, LocalDateTime startDate) {
+    public EmployeeDto(Long id, String name, String position, Integer salary, LocalDateTime startDate) {
         this.id = id;
         this.name = name;
         this.position = position;
