@@ -5,11 +5,15 @@ spring:
   profiles:
     active: smart
 
+  thymeleaf:
+    cache: false
+
 
 hr:
   salary:
     def:
       percent: 5
+
     smart:
       limit1: 10
       limit2: 5
