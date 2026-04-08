@@ -4,6 +4,7 @@ import hu.webuni.hr.heddo.dto.EmployeeDto;
 import hu.webuni.hr.heddo.mapper.EmployeeMapper;
 import hu.webuni.hr.heddo.model.Employee;
 import hu.webuni.hr.heddo.service.EmployeeService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -69,7 +70,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public EmployeeDto createEmployee(@RequestBody EmployeeDto employeeDto) {
+    public EmployeeDto createEmployee(@RequestBody @Valid EmployeeDto employeeDto) {
 //        employees.put(employeeDto.getId(), employeeDto);
 //        return employeeDto;
         Employee employee = employeeService.save(employeeMapper.employeeDtoToEmployee(employeeDto));
@@ -77,7 +78,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<EmployeeDto> modifyEmployee(@PathVariable Long id, @RequestBody EmployeeDto employeeDto) {
+    public ResponseEntity<EmployeeDto> modifyEmployee(@PathVariable Long id, @RequestBody @Valid EmployeeDto employeeDto) {
 //        if (employees.containsKey(id)) {
 //            employeeDto.setId(id);
 //            employees.put(id, employeeDto);
